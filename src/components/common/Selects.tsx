@@ -23,7 +23,7 @@ export function SubjectSelect({
   placeholder = "Select a subject",
 }: SubjectSelectProps) {
   return (
-    <Select value={value || undefined} onValueChange={onChange}>
+    <Select value={value} onValueChange={onChange}>
       <SelectTrigger id={id} aria-invalid={invalid} className={invalid ? "border-destructive" : ""}>
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>

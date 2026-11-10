@@ -26,7 +26,7 @@ function Logo() {
   );
 }
 
-function NavLink({ item, onNavigate }: { item: NavItem; onNavigate?: () => void }) {
+function NavLink({ item, onNavigate }: { item: NavItem; onNavigate?: (() => void) | undefined }) {
   const Icon = item.icon;
   return (
     <Link
@@ -41,7 +41,7 @@ function NavLink({ item, onNavigate }: { item: NavItem; onNavigate?: () => void 
   );
 }
 
-function TimerPill({ onNavigate }: { onNavigate?: () => void }) {
+function TimerPill({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   const timer = usePomodoroState();
   if (timer.status !== "running") return null;
   return (
@@ -60,7 +60,7 @@ function TimerPill({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
+function SidebarContent({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   const { settings } = useAppState();
   const name = settings.name.trim() || "Student";
   return (
